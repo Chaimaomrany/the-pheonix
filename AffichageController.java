@@ -5,7 +5,15 @@
  */
 package gui;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import entities.Produit;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -30,10 +38,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javax.swing.JOptionPane;
 import service.serviceproduit;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 import utils.MyDB;
 
 /**
@@ -65,6 +78,10 @@ public class AffichageController implements Initializable {
     private AnchorPane pane;
     @FXML
     private TableColumn<Produit, Integer> colid;
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Button buttonPDF;
 
     /**
      * Initializes the controller class.
@@ -77,6 +94,11 @@ public class AffichageController implements Initializable {
     /**
      * Initializes the controller class.
      */
+     private void imageView(ActionEvent event) {       
+    Image image = new Image("R.jpg");
+        imageView = setImage(image);
+     }
+        
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -165,6 +187,81 @@ public class AffichageController implements Initializable {
     }
 
     }
+
+    private ImageView setImage(Image image) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+          @FXML
+    void PDF (ActionEvent event) throws SQLException, FileNotFoundException, DocumentException {
+        try {
+Connection connection = MyDB.getInstance().getConnection();
+
+        ResultSet rs;
+        rs = connection.createStatement().executeQuery("SELECT * FROM produit");
+                    /* Step-2: Initialize PDF documents - logical objects */
+                    Document my_pdf_report = new Document();
+                    PdfWriter.getInstance(my_pdf_report, new FileOutputStream("Liste Produit.pdf"));
+                    my_pdf_report.open();
+                    //we have four columns in our table
+                    PdfPTable my_report_table = new PdfPTable(4);
+                    //create a cell object
+                    PdfPCell table_cell;
+
+                    while (rs.next()) {
+                                
+
+                                    String dept_name=rs.getString("id_produit");
+                                    table_cell=new PdfPCell(new Phrase(dept_name));
+                                    my_report_table.addCell(table_cell);
+
+                                    String manager_id=rs.getString("nom");
+                                    table_cell=new PdfPCell(new Phrase(manager_id));
+                                    my_report_table.addCell(table_cell);
+
+                                    String dated=rs.getString("prix");
+                                    table_cell=new PdfPCell(new Phrase(dated));
+                                    my_report_table.addCell(table_cell);
+
+                                    String datef=rs.getString("categorie");
+                                    table_cell=new PdfPCell(new Phrase(datef));
+                                    my_report_table.addCell(table_cell);
+
+                                    
+                                    }
+                    /* Attach report table to PDF */
+                    my_pdf_report.add(my_report_table);
+                    my_pdf_report.close();
+
+                    /* Close all DB related objects */
+                    rs.close();
+
+
+
+
+
+    } catch (FileNotFoundException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+    } catch (DocumentException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+
+    }
+         String title = "Succes! ";
+        String message = "Le fichier PDF est generé";
+
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(title);
+        tray.setMessage(message);
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndDismiss(Duration.seconds(5));
+
+    }
+    
+
+    
          
          
          
