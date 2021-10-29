@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane_accueil" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="1115.0" style="-fx-background-color: #ffb6c1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pi.user.AccueilController">
+   <children>
+      <AnchorPane fx:id="pane_menu" layoutX="1.0" layoutY="-6.0" prefHeight="671.0" prefWidth="401.0" style="-fx-background-color: #add8e6;">
+         <children>
+            <Button fx:id="btn_medecin" layoutY="7.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="401.0" text="Espace Medecin">
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Button>
+            <Button fx:id="btn_centre" layoutX="1.0" layoutY="95.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="401.0" text="Espace Centres esthetiques">
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Button>
+            <Button fx:id="btn_clinique" layoutX="-1.0" layoutY="183.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="401.0" text="Espace Cliniques">
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Button>
+            <Button fx:id="btn_coach" layoutY="269.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="401.0" text="Espace Coachs privés">
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Button>
+            <Button fx:id="btn_admin" layoutX="-1.0" layoutY="446.0" mnemonicParsing="false" onAction="#VersAdmin" prefHeight="74.0" prefWidth="401.0" text="Espace Administrateur">
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Button>
+            <Label fx:id="labe_2" layoutX="26.0" layoutY="557.0" prefHeight="60.0" prefWidth="352.0" text="Welcome to SantéPharm">
+               <font>
+                  <Font name="Webdings" size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_boutique" layoutX="-1.0" layoutY="360.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="401.0" text="Espace Boutiques cosmetiques">
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="accueil_image" fitHeight="478.0" fitWidth="576.0" layoutX="523.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@119771_notes_512x512.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_patient" layoutX="613.0" layoutY="37.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="329.0" text="Patient">
+         <effect>
+            <SepiaTone />
+         </effect>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Label fx:id="label_1" layoutX="613.0" layoutY="120.0" prefHeight="36.0" prefWidth="329.0" text="continuer entant que patient " underline="true">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
