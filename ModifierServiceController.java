@@ -1,0 +1,90 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package GUI;
+
+import Entities.service;
+import Services.CentresMedicauxService;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+
+/**
+ * FXML Controller class
+ *
+ * @author oussama
+ */
+public class ModifierServiceController implements Initializable {
+
+        @FXML
+    private TextField refServOuss;
+    @FXML
+    private TextField nomServOuss;
+    @FXML
+    private TextField prixServOuss;
+    @FXML
+    private Button modifouss;
+    @FXML 
+    private TextField refService;
+    @FXML
+    private ImageView imageView;
+     @FXML
+    private AnchorPane pane;
+    private CentresMedicauxService l;
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        l=new CentresMedicauxService();
+        // TODO
+    }    
+
+    @FXML
+    private void validModif(ActionEvent event) {
+        int i;
+               service x= new service();
+               i= Integer.parseInt(refServOuss.getText());
+        x.setPrix_s_med(prixServOuss.getText());
+        x.setNom_med(nomServOuss.getText());
+         System.out.println(prixServOuss.getText());
+        try{
+        l.Modifier(x,i);
+        }catch(Exception e){System.out.println(e.getMessage());}
+    }
+
+ @FXML
+     private void imageView(ActionEvent event) {       
+    Image image = new Image("/icons/sona.jpg");
+        
+          imageView =setImage(image);
+        }
+
+    private ImageView setImage(Image img) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   @FXML
+    private void retouss(ActionEvent event)throws IOException  {
+ 
+     Pane page=FXMLLoader.load(getClass().getResource("ListeService.fxml"));
+        pane.getChildren().setAll(page);
+    
+    }    
+   
+    }
+    
+

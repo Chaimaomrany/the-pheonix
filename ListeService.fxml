@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ListeServiceController">
+   <children>
+      <Pane layoutX="14.0" layoutY="18.0" prefHeight="34.0" prefWidth="381.0" />
+      <ImageView fx:id="imageView" fitHeight="389.0" fitWidth="612.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/ecole-europeenne-de-bien-etre-.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="127.0" layoutY="18.0" text="Liste des services de centre">
+         <font>
+            <Font name="Times New Roman Bold" size="30.0" />
+         </font>
+      </Label>
+      <Pane layoutX="14.0" layoutY="67.0" prefHeight="317.0" prefWidth="381.0" style="-fx-background-color: rgba(0,0,0,.5);">
+         <children>
+            <TableView fx:id="table" layoutX="13.0" layoutY="15.0" onMouseClicked="#onClick" prefHeight="287.0" prefWidth="356.0">
+               <columns>
+                  <TableColumn fx:id="ref" prefWidth="101.99996948242188" text="refService" />
+                  <TableColumn fx:id="prixService" minWidth="0.0" prefWidth="132.0" text="Prix" />
+                  <TableColumn fx:id="nomService" minWidth="0.0" prefWidth="121.0" text="Nom" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane layoutX="413.0" layoutY="67.0" prefHeight="317.0" prefWidth="167.0" style="-fx-background-color: rgba(0,0,0,.4);">
+         <children>
+            <Button fx:id="interaj" layoutX="34.0" layoutY="21.0" mnemonicParsing="false" onAction="#interaj" prefHeight="34.0" prefWidth="100.0" text="Ajouter">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Button>
+            <Button fx:id="supprimer" layoutX="33.0" layoutY="177.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="34.0" prefWidth="100.0" text="Supprimer">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Button>
+            <Button fx:id="modifier" layoutX="33.0" layoutY="94.0" mnemonicParsing="false" onAction="#modifier" prefHeight="34.0" prefWidth="100.0" text="Modifier">
+               <effect>
+                  <SepiaTone />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="ret" layoutX="33.0" layoutY="251.0" mnemonicParsing="false" onAction="#ret" prefHeight="34.0" prefWidth="100.0" text="Retour">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

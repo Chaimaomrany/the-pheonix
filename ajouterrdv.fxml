@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="328.0" prefWidth="702.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterrdvController">
+   <children>
+      <ImageView fitHeight="547.0" fitWidth="687.0" layoutX="8.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/depositphotos_21855989-stock-photo-success-smart-medical-doctor-with.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="16.0" layoutY="16.0" prefHeight="297.0" prefWidth="671.0" style="-fx-background-color: rgba(0,0,0,.5);">
+         <children>
+            <Label layoutX="40.0" layoutY="30.0" text="Heure debut" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="95.0" text="Heure fin" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="161.0" text="Date" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="hd" layoutX="178.0" layoutY="32.0" />
+            <TextField fx:id="hf" layoutX="178.0" layoutY="98.0" />
+            <TextField fx:id="date" layoutX="178.0" layoutY="164.0" />
+            <Button fx:id="ajout" layoutX="420.0" layoutY="230.0" mnemonicParsing="false" onAction="#ajout" prefHeight="40.0" prefWidth="100.0" text="Ajouter">
+               <effect>
+                  <SepiaTone />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="retour" layoutX="557.0" layoutY="230.0" mnemonicParsing="false" onAction="#retour" prefHeight="40.0" prefWidth="100.0" text="Retour">
+               <effect>
+                  <SepiaTone />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="48.0" layoutY="230.0" text="Mail" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="mail" layoutX="178.0" layoutY="233.0" onAction="#mail" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
