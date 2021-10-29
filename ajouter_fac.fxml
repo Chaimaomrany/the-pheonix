@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="580.0" prefWidth="700.0" style="-fx-background-color: #f5f5dc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Ajouter_facController">
+   <children>
+      <Pane prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: #e6e6fa;" />
+      <ImageView fitHeight="499.0" fitWidth="700.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/facture.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="28.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Facture">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <Pane layoutX="205.0" layoutY="126.0" prefHeight="280.0" prefWidth="141.0" style="-fx-background-color: #e6e6fa;">
+         <children>
+            <Text layoutX="17.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix_unitaire">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="18.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantite">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="17.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Somme_prix">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="D2" layoutX="145.0" layoutY="62.0" />
+            <TextField fx:id="D3" layoutX="145.0" layoutY="99.0" />
+            <TextField fx:id="D4" layoutX="145.0" layoutY="142.0" />
+            <Text layoutX="18.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="88.31494140625">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="D5" layoutX="145.0" layoutY="187.0" />
+            <Text layoutX="18.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mail">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Separator layoutX="25.0" layoutY="85.0" prefHeight="0.0" prefWidth="650.0" />
+      <Button fx:id="confirmer" layoutX="146.0" layoutY="511.0" mnemonicParsing="false" onAction="#confirmer" prefHeight="33.0" prefWidth="118.0" style="-fx-background-color: #e6e6fa;" text="confirmer" />
+      <Button fx:id="retour" layoutX="434.0" layoutY="511.0" mnemonicParsing="false" onAction="#retour" prefHeight="33.0" prefWidth="118.0" style="-fx-background-color: #e6e6fa;" text="Retour" />
+      <TextField fx:id="D6" layoutX="350.0" layoutY="356.0" />
+   </children>
+</AnchorPane>

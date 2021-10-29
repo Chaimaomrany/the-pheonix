@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="580.0" prefWidth="700.0" style="-fx-background-color: #f5f5dc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FactureController">
+   <children>
+      <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: #e6e6fa;" />
+      <Separator layoutX="64.0" layoutY="459.0" prefHeight="16.0" prefWidth="618.0" />
+      <Button fx:id="ajouter" layoutX="12.0" layoutY="492.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="33.0" prefWidth="149.0" style="-fx-background-color: #e6e6fa;" text="Ajouter" />
+      <ImageView fitHeight="492.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/facture.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="45.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Facture">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <Separator layoutX="51.0" layoutY="106.0" prefHeight="4.0" prefWidth="618.0" />
+      <TableView fx:id="tableau" layoutX="29.0" layoutY="190.0" prefHeight="200.0" prefWidth="643.0">
+         <columns>
+            <TableColumn fx:id="Ref" prefWidth="112.0" text="Reference_facture" />
+            <TableColumn fx:id="prix_un" prefWidth="97.0" text="Prix_unitaire" />
+            <TableColumn fx:id="quantite" prefWidth="76.0" text="Quantite" />
+            <TableColumn fx:id="somme" prefWidth="93.0" text="Somme_prix" />
+            <TableColumn fx:id="date" prefWidth="73.0" text="Date" />
+            <TableColumn fx:id="mail" prefWidth="191.0" text="mail" />
+         </columns>
+      </TableView>
+      <Text layoutX="82.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text layoutX="82.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Button fx:id="supprimer" layoutX="174.0" layoutY="492.0" mnemonicParsing="false" onAction="#supprimer" onMouseClicked="#clicked" prefHeight="33.0" prefWidth="149.0" style="-fx-background-color: #e6e6fa;" text="Supprimer" />
+      <Button fx:id="retour" layoutX="375.0" layoutY="492.0" mnemonicParsing="false" onAction="#retour" prefHeight="33.0" prefWidth="149.0" style="-fx-background-color: #e6e6fa;" text="Retour" />
+      <Button fx:id="pdf" layoutX="276.0" layoutY="533.0" mnemonicParsing="false" onAction="#pdf" prefHeight="33.0" prefWidth="149.0" style="-fx-background-color: #e6e6fa;" text="PDF" />
+      <Button fx:id="ordo" layoutX="533.0" layoutY="492.0" mnemonicParsing="false" onAction="#ordo" prefHeight="33.0" prefWidth="149.0" style="-fx-background-color: #e6e6fa;" text="Ordonnance" />
+   </children>
+</AnchorPane>

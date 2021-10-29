@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="580.0" prefWidth="700.0" style="-fx-background-color: #f5f5dc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AccueilController">
+   <children>
+      <ImageView fitHeight="481.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/acc.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="243.0" layoutY="423.0" prefHeight="133.0" prefWidth="214.0" style="-fx-background-color: #e6e6fa;">
+         <children>
+            <Text fill="MEDIUMPURPLE" layoutX="39.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gérer rendez-vous" wrappingWidth="147.76171875">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="50.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="modifier ou annuler vos rendez-vous" wrappingWidth="97.00000205822289">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="472.0" layoutY="423.0" prefHeight="133.0" prefWidth="214.0" style="-fx-background-color: #e6e6fa;">
+         <children>
+            <Button fx:id="retour" layoutX="33.0" layoutY="51.0" mnemonicParsing="false" onAction="#retour" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #b0e0e6;" text="Retour" />
+         </children></Pane>
+      <Pane layoutX="17.0" layoutY="423.0" prefHeight="133.0" prefWidth="214.0" style="-fx-background-color: #e6e6fa;">
+         <children>
+            <Text fill="MEDIUMPURPLE" layoutX="41.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prendre RDV" wrappingWidth="113.958984375">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text layoutX="50.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="choisir votre medecin et prendre un rendez-vous" wrappingWidth="113.95897716283798">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <TableView fx:id="tableau" layoutX="24.0" layoutY="197.0" onMouseClicked="#clicked" prefHeight="186.0" prefWidth="652.0">
+        <columns>
+          <TableColumn fx:id="rf" prefWidth="228.0" text="ref_rdv_med" />
+            <TableColumn fx:id="hd" prefWidth="214.0" text="h_debut" />
+            <TableColumn fx:id="dt" prefWidth="209.0" text="date" />
+        </columns>
+      </TableView>
+      <Button fx:id="ajouter" layoutX="221.0" layoutY="-2.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #b0e0e6;" text="Ajouter" />
+      <Button fx:id="modifier" layoutX="375.0" mnemonicParsing="false" onAction="#modifier" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #b0e0e6;" text="Modifier" />
+      <Button fx:id="supprimer" layoutX="529.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #b0e0e6;" text="Supprimer" />
+   </children>
+</AnchorPane>

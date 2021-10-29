@@ -5,16 +5,12 @@
  */
 package gui;
 
-import entities.rendez_vous_medecin;
+import entities.ordonnance;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,8 +24,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import services.servicerendezvous;
+import services.serviceordonnance;
 import utils.myDB;
 
 /**
@@ -37,86 +32,69 @@ import utils.myDB;
  *
  * @author Sabrine
  */
-public class AccueilController implements Initializable {
+public class AfficherordonnanceController implements Initializable {
 
     @FXML
     private AnchorPane anchorpane;
     @FXML
-    private TableView<rendez_vous_medecin> tableau;
+    private TableColumn<ordonnance, Integer> ref_ordonnance;
     @FXML
-    private TableColumn<rendez_vous_medecin, String> hd;
-      @FXML
-    private TableColumn<rendez_vous_medecin, Integer> rf;
+    private TableColumn<ordonnance, String> medicament;
     @FXML
-    private TableColumn<rendez_vous_medecin, String> dt;
-   
+    private TableColumn<ordonnance, String> Date;
     @FXML
     private Button ajouter;
-    @FXML
-    private Button modifier;
     @FXML
     private Button supprimer;
     @FXML
     private Button retour;
-    private int index;
+        private int index;
     private int a;
     private String b,c;
-    
-  
+    @FXML
+    private TableView<ordonnance> tableau;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    Affiche();
-
-    }
+        Affiche();
         // TODO
-
-    private void Affiche()  {
-    servicerendezvous sr = new servicerendezvous();
-    ObservableList<rendez_vous_medecin> listt= sr.findAll();
-            hd.setCellValueFactory(new PropertyValueFactory<>("h_debut"));
-            dt.setCellValueFactory(new PropertyValueFactory<>("date"));
-            rf.setCellValueFactory(new PropertyValueFactory<>("ref_rdv_med"));
-           tableau.setItems(sr.findAll());
-          
-
     }    
-    private void imageView(ActionEvent event)
+private void Affiche()  {
+    serviceordonnance sr = new serviceordonnance();
+    ObservableList<ordonnance> listt= sr.findAll();
+            ref_ordonnance.setCellValueFactory(new PropertyValueFactory<>("ref_ordonnance"));
+            medicament.setCellValueFactory(new PropertyValueFactory<>("medicament"));
+            Date.setCellValueFactory(new PropertyValueFactory<>("Date"));
+           tableau.setItems(listt);
+}
+ private void imageView(ActionEvent event)
     { Image image = new Image ("/icons/acc.jpg");
         ImageView imageView = setImage(image);
     }
-public AccueilController ()
+ public AfficherordonnanceController ()
 {
         Connection cnx = myDB.getInstance().getConnection();
 }
+ 
+ 
     @FXML
     private void ajouter(ActionEvent event)throws IOException {
    
     
         
     
-         AnchorPane page=FXMLLoader.load(getClass().getResource("ajouter_rdv.fxml"));
+         AnchorPane page=FXMLLoader.load(getClass().getResource("ordonnance.fxml"));
         anchorpane.getChildren().setAll(page);
     }
 
     @FXML
-    private void modifier(ActionEvent event)throws IOException {
-   
-    
-        
-    
-         AnchorPane page=FXMLLoader.load(getClass().getResource("modifier_rdv.fxml"));
-        anchorpane.getChildren().setAll(page);
-    } 
-    
-
-    @FXML
     private void supprimer(ActionEvent event) throws SQLException {
         
-       servicerendezvous rs = new servicerendezvous();
+       serviceordonnance rs = new serviceordonnance();
+       a=ref_ordonnance.getCellData(index);
         rs.delete(a);
         Affiche();
     }
@@ -125,34 +103,23 @@ public AccueilController ()
     }  
 
     @FXML
-    private void retour(ActionEvent event)throws IOException {
+    private void retour(ActionEvent event) throws IOException {
    
     
         
     
-         AnchorPane page=FXMLLoader.load(getClass().getResource("Medecin.fxml"));
+         AnchorPane page=FXMLLoader.load(getClass().getResource("facture.fxml"));
         anchorpane.getChildren().setAll(page);
     }
-
     @FXML
     private void clicked(MouseEvent event) {
         index = tableau.getSelectionModel().getSelectedIndex();
         if (index<= -1)
             return;
-        a=rf.getCellData(index);
-        b=hd.getCellData(index);
-        c=dt.getCellData(index);
+        a=ref_ordonnance.getCellData(index);
+        b=medicament.getCellData(index);
+        c=Date.getCellData(index);
         System.out.println(a);
     }
-
-  
     
-           
-            
-           
-            
-          
-            
-            
-        }
-
+}
