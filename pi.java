@@ -19,7 +19,7 @@ public class pi extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("affichage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("back.fxml"));
         
         Scene scene = new Scene(root);
         

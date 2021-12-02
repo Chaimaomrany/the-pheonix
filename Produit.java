@@ -81,6 +81,5 @@ public Produit (String prix , String categorie){
     public String toString() {
         return this.nom+" "+this.prix+" "+this.categorie;
     }
-  
-    
 }
+  
