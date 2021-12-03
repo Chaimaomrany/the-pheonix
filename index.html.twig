@@ -1,45 +1,64 @@
-{% extends 'base-front.html.twig' %}
+{% extends 'base-back.html.twig' %}
 
-{% block title %}Commande index{% endblock %}
+{% block title %}Livraison index{% endblock %}
 
 {% block body %}
-    <h1>Commande index</h1>
 
+    <h1>Livraison index</h1>
+
+{{ form_start(form) }}
+<div class="form-row align-items-end" >
+    <div class="col">
+        {{ form_row(form.nomlivreur) }}
+    </div>
+    <div class="col">
+        <div class="form-group">
+            <button type="submit" class="btn btn-info">Rechercher</button>
+        </div>
+    </div>
+</div>
+{{ form_end(form) }}
     <table class="table">
         <thead>
             <tr>
-                <th>Idcom</th>
-                <th>Nomprod</th>
-                <th>Quantite</th>
-                <th>Numtel</th>
-                <th>Adresse</th>
-                <th>Date</th>
-                <th>Emailc</th>
+
+                <th>Idliv</th>
+                <th>Nomlivreur</th>
+                <th>Nomclient</th>
+                <th>Numtelclient</th>
+                <th>Lieudepart</th>
+                <th>Destination</th>
+                <th>Dateliv</th>
+                <th>Email</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for commande in commandes %}
+        {% for livraison in livraisons %}
             <tr>
-                <td>{{ commande.idcom }}</td>
-                <td>{{ commande.nomprod }}</td>
-                <td>{{ commande.quantite }}</td>
-                <td>{{ commande.numtel }}</td>
-                <td>{{ commande.adresse }}</td>
-                <td>{{ commande.date ? commande.date|date('Y-m-d') : '' }}</td>
-                <td>{{ commande.emailc }}</td>
+                <td>{{ livraison.idliv }}</td>
+                <td>{{ livraison.nomlivreur }}</td>
+                <td>{{ livraison.nomclient }}</td>
+                <td>{{ livraison.numtelclient }}</td>
+                <td>{{ livraison.lieudepart }}</td>
+                <td>{{ livraison.destination }}</td>
+                <td>{{ livraison.dateliv ? livraison.dateliv|date('Y-m-d') : '' }}</td>
+                <td>{{ livraison.email }}</td>
                 <td>
-                    <a href="{{ path('commande_show', {'idcom': commande.idcom}) }}">show</a>
-                    <a href="{{ path('commande_edit', {'idcom': commande.idcom}) }}">edit</a>
+                    <a href="{{ path('livraison_show', {'idliv': livraison.idliv}) }}">show</a>
+                    <a href="{{ path('livraison_edit', {'idliv': livraison.idliv}) }}">edit</a>
+
+
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="9">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('commande_new') }}">Create new</a>
+    <a href="{{ path('livraison_new') }}">Create new</a>
+    <a href="{{ path('livraison_imprime')}}">imprimer</a>
 {% endblock %}
