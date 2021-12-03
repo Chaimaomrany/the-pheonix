@@ -1,0 +1,40 @@
+{% extends 'base-back.html.twig' %}
+{% block body %}
+<h1>Liste des Services</h1>
+
+    <table class="table table-hover js-basic-example dataTable table-custom spacing5" style="font-size: x-large; font-style: italic";
+    bgcolor="#5f9ea0">
+        <thead>
+    <tr style="color: #0a0a0a">
+        <th>refSEsth</th>
+        <th>prixSEsth</th>
+        <th>nolSEsth</th>
+
+        <th>Update</th>
+        <th>Delete</th>
+
+    </tr>
+        </thead>
+    <tr {% for c in cc %}>
+        <td>{{ c.refSEsth }}</td>
+        <td>{{ c.prixSEsth }}</td>
+        <td>{{ c.nolSEsth }}</td>
+
+<td><a href=" {{ path('d',{'id':c.refSEsth}) }} ">Delete</a></td>
+        <td><a href=" {{ path('update',{'id':c.refSEsth}) }} ">Update</a></td>
+
+
+    </tr {% endfor %}>
+</table>
+    <script src="{{asset('back-office/dataTables-data.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+
+    <script src="{{asset('back-office/assets/vendor/sweetalert/sweetalert.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+    <script src="{{asset('back-office/assets/bundles/mainscripts.bundle.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+    <script src="{{ asset('back-office/js/pages/tables/jquery-datatable.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+    <script src="{{ asset('back-office/assets/bundles/datatablescripts.bundle.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+    <script src="{{ asset('back-office/assets/vendor/jquery-datatable/buttons/dataTables.buttons.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+    <script src="{{ asset('back-office/assets/vendor/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+    <script src="{{ asset('back-office/assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+    <script src="{{ asset('back-office/assets/vendor/jquery-datatable/buttons/buttons.html5.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+    <script src="{{ asset('back-office/assets/vendor/jquery-datatable/buttons/buttons.print.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+{% endblock %}

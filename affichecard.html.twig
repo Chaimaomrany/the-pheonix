@@ -1,0 +1,17 @@
+
+<div class="card mb-4  offset-md-2">
+    <img src="{{ asset('back-office/assets/images/mask.png')}}"  alt="card-img-left"
+
+         style="width: 600px;height: 100px">
+     <div class="card-body">
+         <h5 class="card-title">
+             <a href=" {{ path('service_esthethiques',{ 'refSEsth':c.refSEsth}) }}">
+                 {{ c.nolsesth }}
+
+
+
+             </a>
+         </h5>
+         <p class="card-text">{{c.prixSEsth }}</p>
+     </div>
+</div>

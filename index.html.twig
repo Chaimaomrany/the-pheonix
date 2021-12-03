@@ -1,64 +1,21 @@
-{% extends 'base-back.html.twig' %}
-
-{% block title %}Livraison index{% endblock %}
+{% extends 'base-front.html.twig' %}
 
 {% block body %}
-
-    <h1>Livraison index</h1>
-
-{{ form_start(form) }}
-<div class="form-row align-items-end" >
-    <div class="col">
-        {{ form_row(form.nomlivreur) }}
-    </div>
-    <div class="col">
-        <div class="form-group">
-            <button type="submit" class="btn btn-info">Rechercher</button>
+    <div class="container mt-4">
+        <h1> Nos Services </h1>
         </div>
+        <div class="row">
+{% for c in service %}
+    <div class="col-md-4">
+    {% include 'service_esthethiques/affichecard.html.twig' %}
     </div>
-</div>
-{{ form_end(form) }}
-    <table class="table">
-        <thead>
-            <tr>
-
-                <th>Idliv</th>
-                <th>Nomlivreur</th>
-                <th>Nomclient</th>
-                <th>Numtelclient</th>
-                <th>Lieudepart</th>
-                <th>Destination</th>
-                <th>Dateliv</th>
-                <th>Email</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for livraison in livraisons %}
-            <tr>
-                <td>{{ livraison.idliv }}</td>
-                <td>{{ livraison.nomlivreur }}</td>
-                <td>{{ livraison.nomclient }}</td>
-                <td>{{ livraison.numtelclient }}</td>
-                <td>{{ livraison.lieudepart }}</td>
-                <td>{{ livraison.destination }}</td>
-                <td>{{ livraison.dateliv ? livraison.dateliv|date('Y-m-d') : '' }}</td>
-                <td>{{ livraison.email }}</td>
-                <td>
-                    <a href="{{ path('livraison_show', {'idliv': livraison.idliv}) }}">show</a>
-                    <a href="{{ path('livraison_edit', {'idliv': livraison.idliv}) }}">edit</a>
-
-
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
+    </div>
 
-    <a href="{{ path('livraison_new') }}">Create new</a>
-    <a href="{{ path('livraison_imprime')}}">imprimer</a>
 {% endblock %}
+
+
+
+
+

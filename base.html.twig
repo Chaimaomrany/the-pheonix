@@ -1,19 +1,345 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+<!doctype html>
+<html lang="en">
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+
+<!-- Mirrored from nsdbytes.com/template/mooli/html/dist/bienvenue by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Nov 2021 20:48:52 GMT -->
+<head>
+    <title>Boutique</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="author" content="GetBootstrap, design by: puffintheme.com">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/animate-css/vivify.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/chartist/css/chartist.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css') }}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/c3/c3.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/toastr/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/jvectormap/jquery-jvectormap-2.0.3.min.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('back-office/assets/css/mooli.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/font-awesome/css/bootstrap.min.css"')}}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/animate-css/vivify.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/chartist/css/chartist.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css')}}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/c3/c3.min.css')}}" />
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/toastr/toastr.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('back-office/assets/vendor/jvectormap/jquery-jvectormap-2.0.3.min.css')}}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" integrity="sha256-16PDMvytZTH9heHu9KBPjzrFTaoner60bnABykjNiM0=" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ asset('back-office/assets/css/mooli.min.css')}}">
+</head>
+<body>
+
+
+<div class="themesetting">
+
+
+    <a href="javascript:void(0);" class="theme_btn"><i class="fa fa-gear fa-spin"></i></a>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <ul class="choose-skin list-unstyled mb-0">
+                <li data-theme="green"><div class="green"></div></li>
+                <li data-theme="orange"><div class="orange"></div></li>
+                <li data-theme="blush"><div class="blush"></div></li>
+                <li data-theme="cyan" class="active"><div class="cyan"></div></li>
+                <li data-theme="timber"><div class="timber"></div></li>
+                <li data-theme="blue"><div class="blue"></div></li>
+                <li data-theme="amethyst"><div class="amethyst"></div></li>
+            </ul>
+        </li>
+        <li class="list-group-item d-flex align-items-center justify-content-between">
+            <span>Light Sidebar</span>
+            <label class="switch sidebar_light">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </li>
+        <li class="list-group-item d-flex align-items-center justify-content-between">
+            <span>Gradient</span>
+            <label class="switch gradient_mode">
+                <input type="checkbox" checked="">
+                <span class="slider round"></span>
+            </label>
+        </li>
+        <li class="list-group-item d-flex align-items-center justify-content-between">
+            <span>Dark Mode</span>
+            <label class="switch dark_mode">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </li>
+        <li class="list-group-item d-flex align-items-center justify-content-between">
+            <span>RTL version</span>
+            <label class="switch rtl_mode">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </li>
+    </ul>
+    <hr>
+    <div>
+        <a href="https://themeforest.net/item/mooli-responsive-admin-dashboard-template/26561151" class="btn btn-dark btn-block" target="_blank">Buy this item</a>
+        <a href="https://themeforest.net/user/puffintheme/portfolio" target="_blank" class="btn btn-primary theme-bg gradient btn-block">View Portfolio</a>
+    </div>
+</div>
+
+<div class="overlay"></div>
+<div id="wrapper"> </div>
+
+
+
+
+
+
+
+
+
+<div id="body" class="theme-cyan">
+
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img src="{{ asset('back-office/assets/images/icon.svg')}}" width="40" height="40" alt="Santepharm"></div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+
+    <div class="themesetting">
+        <a href="javascript:void(0);" class="theme_btn"><i class="fa fa-gear fa-spin"></i></a>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <ul class="choose-skin list-unstyled mb-0">
+                    <li data-theme="green"><div class="green"></div></li>
+                    <li data-theme="orange"><div class="orange"></div></li>
+                    <li data-theme="blush"><div class="blush"></div></li>
+                    <li data-theme="cyan" class="active"><div class="cyan"></div></li>
+                    <li data-theme="timber"><div class="timber"></div></li>
+                    <li data-theme="blue"><div class="blue"></div></li>
+                    <li data-theme="amethyst"><div class="amethyst"></div></li>
+                </ul>
+            </li>
+            <li class="list-group-item d-flex align-items-center justify-content-between">
+                <span>Light Sidebar</span>
+                <label class="switch sidebar_light">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+            <li class="list-group-item d-flex align-items-center justify-content-between">
+                <span>Gradient</span>
+                <label class="switch gradient_mode">
+                    <input type="checkbox" checked="">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+            <li class="list-group-item d-flex align-items-center justify-content-between">
+                <span>Dark Mode</span>
+                <label class="switch dark_mode">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+            <li class="list-group-item d-flex align-items-center justify-content-between">
+                <span>RTL version</span>
+                <label class="switch rtl_mode">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+        </ul>
+        <hr>
+        <div>
+            <a href="https://themeforest.net/item/mooli-responsive-admin-dashboard-template/26561151" class="btn btn-dark btn-block" target="_blank">Buy this item</a>
+            <a href="https://themeforest.net/user/puffintheme/portfolio" target="_blank" class="btn btn-primary theme-bg gradient btn-block">View Portfolio</a>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+    <div id="wrapper">
+
+        <nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-left">
+                    <div class="navbar-btn">
+                        <a href="bienvenue"><img src="{{ asset('back-office/assets/images/icon.svg')}}" alt="Santepharm Logo" class="img-fluid logo"></a>
+                        =                    </div>
+                    <div class="col-sm-2 offset-md-0">
+                        <li class="btn btn-sm btn-light btn-block">
+                            <a href="Affiche" class="btn btn-sm btn-light btn-block-link"
+                               style="color: #5eb5e0; font-size: large; font-weight: bold">Détails</a>
+
+                        </li>
+                    </div>
+                        {% block body %}
+                        {% endblock %}
+                    </form>
+                    {% block bod %}
+                    {% endblock %}
+                </div>
+                {% block boy %}
+                {% endblock %}
+                <div class="navbar-right">
+                    <div id="navbar-menu">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown hidden-xs">
+                                <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">Create</a>
+                                <div class="dropdown-menu pb-0 mt-0">
+                                    <a class="dropdown-item pt-2 pb-2" href="Ajout">Service</a>
+
+                                </div>
+                            </li>
+                            <li class="dropdown hidden-xs">
+
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="mr-4"><i class="fa fa-question-circle text-warning"></i></div>
+                                </a>
+                            </li>
+                        </ul>
+                        </li>
+
+                        <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="fa fa-comments-o"></i></a></li>
+
+                        <li class="hidden-xs"><a href="javascript:void(0);" id="btnFullscreen" class="icon-menu"><i class="fa fa-arrows-alt"></i></a></li>
+                        <li><a href="page-login.html" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="recent_searche" style="display: none;">
+                    <div class="card mb-0">
+                        <div class="header">
+                            <h2>Recent search result</h2>
+                            <ul class="header-dropdown dropdown">
+                                <li><a href="javascript:void(0);">Clear data</a></li>
+                                <li><a href="page-search-results.html"><i class="fa fa-external-link"></i></a></li>
+                            </ul>
+
+                        </div>
+                        <div class="body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item p-l-0 p-r-0">
+                                    <h6><a href="#">Crush it - Bootstrap Admin Application Template &amp; Ui Kit</a></h6>
+                                    <p class="text-muted">It is a long established fact that a reader will be distracted.</p>
+                                    <div class="text-muted font-13">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><span class="badge badge-secondary margin-0">React</span></li>
+                                            <li class="list-inline-item">Dec 27 2020</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="list-group-item p-l-0 p-r-0">
+                                    <h6><a href="#">Epic Pro - HR &amp; Project Management Admin Template and UI Kit</a></h6>
+                                    <p class="text-muted">he point of using Lorem Ipsum is that it has a more-or-less English.</p>
+                                    <div class="text-muted font-13">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><span class="badge badge-success margin-0">HTML</span></li>
+                                            <li class="list-inline-item">Oct 13 2020</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="list-group-item p-l-0 p-r-0">
+                                    <p class="text-muted">Commodo excepteur non ut aliqua ex qui velit sed esse consequat in </p>
+                                    <div class="text-muted font-13">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><span class="badge badge-danger margin-0">Bootstrap</span></li>
+                                            <li class="list-inline-item">Sep 27 2020</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="left-sidebar" class="sidebar">
+            <div class="navbar-brand">
+                <a href="bienvenue"><img src="{{ asset('back-office/assets/images/icon.svg') }}" alt="Mooli Logo" class="img-fluid logo"><span>santepharm</span></a>
+                <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="fa fa-close"></i></button>
+            </div>
+            <div class="sidebar-scroll">
+                <div class="user-account">
+                    <div class="user_div">
+                        <img src="{{ asset('back-office/assets/images/user.png')}}" class="user-photo" alt="User Profile Picture">
+                    </div>
+                    <div class="dropdown">
+
+                    </div>
+                </div>
+
+                <nav id="left-sidebar-nav" class="sidebar-nav">
+                    <ul id="main-menu" class="metismenu animation-li-delay">
+                        <li><a href="Affiche"> <span>Service</span> <span class="badge badge-default mr-0">12</span></a></li>
+
+            </ul>
+            </nav>
+
+        </div>
+    </div>
+
+
+</div>
+    {% block stylesheets %}
+
+        <style>
+            #calendrier{
+                width: 80%;
+                margin: auto;
+            }
+        </style>
+    {% endblock %}
+
+    {% block javascripts %}
+    <script>
+    window.onload = () => {
+    let calendarElt = document.querySelector("#calendrier")
+    let calendar = new FullCalendar.Calendar(calendarElt, {
+    initialView: 'dayGridMonth',
+    locale:'fr',
+    timeZone:'Afrique/Tunis',
+    headerToolbar :{
+    start:'prev,next today',
+    center:'title',
+    end: 'dayGridMonth,timeGridWeek'},
+    events:{{ data|raw }}
+
+    })
+    calendar.render()}
+    {% endblock %}
+    </script>
+
+<script data-cfasync="false" src="{{ asset('back-office/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script src="{{ asset('back-office/assets/bundles/libscripts.bundle.js')}}" type="f201cebcf3a1d4650c9e90f1-text/javascript"></script>
+<script src="{{ asset('back-office/assets/bundles/vendorscripts.bundle.js')}}" type="f201cebcf3a1d4650c9e90f1-text/javascript"></script>
+
+<script src="{{ asset('back-office/assets/bundles/flotscripts.bundle.js')}}" type="f201cebcf3a1d4650c9e90f1-text/javascript"></script>
+<script src="{{ asset('back-office/assets/bundles/c3.bundle.js')}}" type="f201cebcf3a1d4650c9e90f1-text/javascript"></script>
+<script src="{{ asset('back-office/assets/bundles/apexcharts.bundle.js')}}" type="f201cebcf3a1d4650c9e90f1-text/javascript"></script>
+<script src="{{ asset('back-office/assets/bundles/jvectormap.bundle.js')}}" type="f201cebcf3a1d4650c9e90f1-text/javascript"></script>
+<script src="{{ asset('back-office/assets/vendor/toastr/toastr.js')}}" type="f201cebcf3a1d4650c9e90f1-text/javascript"></script>
+
+<script src="{{asset('back-office/assets/bundles/mainscripts.bundle.js')}}" type="f201cebcf3a1d4650c9e90f1-text/javascript"></script>
+<script src="{{asset('back-office/js/index.js')}}" ></script>
+
+<script src="{{asset('back-office/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js')}}" data-cf-settings="f201cebcf3a1d4650c9e90f1-|49" defer=""></script><script defer src="{{ asset('back-office/js/beacon.min.js') }}" data-cf-beacon='{"rayId":"6ab9e77fec0a6d7f","version":"2021.10.0","r":1,"token":"f79813393a9345e8a59bb86abc14d67d","si":100}'></script>
+<script src="{{ asset('back-office/assets/bundles/vendorscripts.bundle.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+
+<script src="{{asset('back-office/assets/bundles/datatablescripts.bundle.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+<script src="{{asset('back-office/assets/vendor/jquery-datatable/buttons/dataTables.buttons.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+<script src="{{asset('back-office/assets/vendor/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+<script src="{{asset('back-office/assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+<script src="{{asset('back-office/assets/vendor/jquery-datatable/buttons/buttons.html5.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+<script src="{{asset('back-office/assets/vendor/jquery-datatable/buttons/buttons.print.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+<script src="{{asset('back-office/assets/vendor/sweetalert/sweetalert.min.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js" integrity="sha256-XOMgUu4lWKSn8CFoJoBoGd9Q/OET+xrfGYSo+AKpFhE=" crossorigin="anonymous"></script>
+
+<script src="{{asset('back-office/assets/bundles/mainscripts.bundle.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+<script src="{{asset('back-office/js/pages/tables/jquery-datatable.js')}}" type="6e8a29b22136aac0146251cb-text/javascript"></script>
+</body>
+
+<!-- Mirrored from nsdbytes.com/template/mooli/html/dist/bienvenue by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Nov 2021 20:49:15 GMT -->
 </html>
