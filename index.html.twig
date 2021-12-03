@@ -1,60 +1,45 @@
-{% extends 'user-front.html.twig' %}
+{% extends 'base-front.html.twig' %}
 
-{% block title %}Hello UserController!{% endblock %}
+{% block title %}Commande index{% endblock %}
 
 {% block body %}
+    <h1>Commande index</h1>
 
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idcom</th>
+                <th>Nomprod</th>
+                <th>Quantite</th>
+                <th>Numtel</th>
+                <th>Adresse</th>
+                <th>Date</th>
+                <th>Emailc</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commande in commandes %}
+            <tr>
+                <td>{{ commande.idcom }}</td>
+                <td>{{ commande.nomprod }}</td>
+                <td>{{ commande.quantite }}</td>
+                <td>{{ commande.numtel }}</td>
+                <td>{{ commande.adresse }}</td>
+                <td>{{ commande.date ? commande.date|date('Y-m-d') : '' }}</td>
+                <td>{{ commande.emailc }}</td>
+                <td>
+                    <a href="{{ path('commande_show', {'idcom': commande.idcom}) }}">show</a>
+                    <a href="{{ path('commande_edit', {'idcom': commande.idcom}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-
-    <section class="contact-info py-0">
-        <div class="container">
-            <div class="row row-no-gutter boxes-wrapper">
-                <div class="col-sm-12 col-md-4">
-                    <div class="contact-box d-flex">
-                        <div class="contact__icon">
-                            <i class="icon-call3"></i>
-                        </div><!-- /.contact__icon -->
-                        <div class="contact__content">
-                            <h2 class="contact__title">Emergency Cases</h2>
-                            <p class="contact__desc">Please feel free to contact our friendly reception staff with any general or
-                                medical enquiry.</p>
-                            <a href="tel:+201061245741" class="phone__number">
-                                <i class="icon-phone"></i> <span>01061245741</span>
-                            </a>
-                        </div><!-- /.contact__content -->
-                    </div><!-- /.contact-box -->
-                </div><!-- /.col-md-4 -->
-                <div class="col-sm-12 col-md-4">
-                    <div class="contact-box d-flex">
-                        <div class="contact__icon">
-                            <i class="icon-health-report"></i>
-                        </div><!-- /.contact__icon -->
-                        <div class="contact__content">
-                            <h2 class="contact__title">Doctors Timetable</h2>
-                            <p class="contact__desc">Qualified doctors available six days a week, view our timetable to make an
-                                appointment.</p>
-                            <a href="doctors-timetable.html" class="btn btn__white btn__outlined btn__rounded">
-                                <span>View Timetable</span><i class="icon-arrow-right"></i>
-                            </a>
-                        </div><!-- /.contact__content -->
-                    </div><!-- /.contact-box -->
-                </div><!-- /.col-md-4 -->
-                <div class="col-sm-12 col-md-4">
-                    <div class="contact-box d-flex">
-                        <div class="contact__icon">
-                            <i class="icon-heart2"></i>
-                        </div><!-- /.contact__icon -->
-                        <div class="contact__content">
-                            <h2 class="contact__title">Opening Hours</h2>
-                            <ul class="time__list list-unstyled mb-0">
-                                <li><span>Monday - Friday</span><span>8.00 - 7:00 pm</span></li>
-                                <li><span>Saturday</span><span>9.00 - 10:00 pm</span></li>
-                                <li><span>Sunday</span><span>10.00 - 12:00 pm</span></li>
-                            </ul>
-                        </div><!-- /.contact__content -->
-                    </div><!-- /.contact-box -->
-                </div><!-- /.col-md-4 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </section><!-- /.contact-info -->
+    <a href="{{ path('commande_new') }}">Create new</a>
 {% endblock %}
