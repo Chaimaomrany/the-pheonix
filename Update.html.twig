@@ -1,4 +1,22 @@
 {% extends 'base-back.html.twig' %}
 {% block body %}
-{{ form(f) }}
+    {# {{ form(f) }} #}
+
+    {{ form_start(f,{'attr':{'novalidate':'novalidate'}})}}
+
+
+    <div class="col-md-2"
+         style=" color: #0b5b97; font-size: large; font-weight: bold">{{ form_row(f.nom) }}</div>
+    <div class="col-md-2"
+         style=" color: #0b5b97; font-size: large; font-weight: bold">{{ form_row(f.categorie) }}</div>
+    <div class="col-md-2"
+         style=" color: #0b5b97; font-size: large; font-weight: bold">{{ form_row(f.prix) }}</div>
+    <div class="col-md-2"
+         style=" color: #0b5b97; font-size: large; font-weight: bold">{{ form_row(f.imageFile) }}</div>
+    <div class="col-sm-3 offset-md-1">
+        <button type="submit" class="btn btn-sm btn-light btn-block"
+                style=" color: #0a0a0a; font-size: large; font-weight: bold">Update</button>
+    </div>
+    {{ form(f,{'method':'GET'}) }}
+    {{ form_end(f) }}
 {% endblock %}
