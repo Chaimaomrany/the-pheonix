@@ -1,0 +1,23 @@
+<div class="card mb-4">
+    {% if p.filename %}
+
+        <img src="{{ vich_uploader_asset(p ,"imageFile")  }}" alt="card-img-top"
+             style="width:400px;height:300px;">
+    {% endif %}
+    <div   class="card-body">
+
+        <h5    class="card-title">
+            <a href="{{ path('produit', { 'idProduit': p.idProduit}) }}">
+            {{ p.nom }}
+                </a>
+
+        </h5>
+    <p  class="card-text">    ({{ p.categorie.nom }})</p>
+
+        <div class="text-primary"   style="font-size: 2rem; font-weight: bold;">
+            {{ p.prix }}
+        </div>
+    </div>
+
+
+    </div>

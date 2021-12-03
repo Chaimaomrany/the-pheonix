@@ -1,0 +1,67 @@
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+<img src="data:image/us.123rf.com/450wm/godfather744431/godfather7444311408/godfather744431140800240/30366228-produits-cosm%C3%A9tiques-collection.jpg?ver=6">
+    <style>
+        table{
+            width: 100%;
+        }
+        h1{
+            font-family:Arial, Helvetica, sans-serif;
+            color: #0ea0db;
+        }
+    </style>
+
+{% block body %}
+
+                <h1>Liste des Produits</h1>
+
+            <div class="body" id="table_2">
+                <div class="table-responsive"
+                     style="font-weight: bolder;color: #0a0a0a">
+                    <table class="table table-hover js-basic-example dataTable table-custom spacing5"
+                           style="font-weight: bolder;color: #0a0a0a">
+                        <thead>
+                        <tr>
+                            <th>id_produit</th>
+                            <th>nom</th>
+                            <th>prix</th>
+                            <th>categorie</th>
+
+
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                        <tr>
+                            <th>id_produit</th>
+                            <th>nom</th>
+                            <th>prix</th>
+                            <th>categorie</th>
+
+
+
+                        </tr>
+
+                        </tr>
+                        </tfoot>
+                        <tbody>
+
+                        {% for p in Produit %}
+                            <tr>
+                                <td>{{ p.idProduit }}</td>
+                                <td>{{ p.nom}}</td>
+                                <td>{{ p.prix}}</td>
+                                <td>{{ p.categorie.nom}}</td>
+
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+{% endblock %}
